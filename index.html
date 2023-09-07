@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Canvas</title>
+
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        canvas {
+            display: block;
+            background-color: #03059b;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1>Trabajo Julio Cesar Valdovinos Canvas</h1>
+
+
+    <canvas id="canvas" width="900" height="600"></canvas>
+
+    <script>
+
+        var canvas = document.getElementById("canvas");
+        ctx = canvas.getContext('2d');
+
+        // aros
+        ctx.fillStyle = '#FFF700'
+        ctx.beginPath();
+        ctx.arc(80, 380, 30, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = '#03059b'
+        ctx.beginPath();
+        ctx.arc(80, 380, 26, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = '#FFF700'
+        ctx.beginPath();
+        ctx.arc(230, 380, 30, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = '#03059b'
+        ctx.beginPath();
+        ctx.arc(230, 380, 26, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = '#FFF700'
+        ctx.beginPath();
+        ctx.arc(380, 380, 30, 0, 2 * Math.PI);
+        ctx.fill();
+
+        ctx.fillStyle = '#03059b'
+        ctx.beginPath();
+        ctx.arc(380, 380, 26, 0, 2 * Math.PI);
+        ctx.fill();
+
+        //palma
+        ctx.fillStyle = '#5D2D00';
+        ctx.fillRect(540, 150, 20, 280);
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(545, 150, 36, 0, Math.PI,false);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(485, 140, 36, 0, Math.PI,false);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(465, 130, 36, 0, Math.PI,false);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(585, 140, 36, 0, Math.PI,false);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(605, 130, 36, 0, Math.PI,false);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(545, 150, 36, 0, Math.PI,false);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(525, 190, 36, 0, Math.PI,true);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(505, 200, 36, 0, Math.PI,true);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(485, 210, 36, 0, Math.PI,true);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(465, 220, 36, 0, Math.PI,true);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(565, 190, 36, 0, Math.PI,true);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(585, 200, 36, 0, Math.PI,true);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(605, 210, 36, 0, Math.PI,true);
+        ctx.fill();
+        ctx.fillStyle = '#4DFF0F';
+        ctx.beginPath();
+        ctx.arc(625, 220, 36, 0, Math.PI,true);
+        ctx.fill();
+
+
+        //flor
+        ctx.fillStyle = '#139E22';
+        ctx.fillRect(690, 360, 10, 70);
+        
+        ctx.fillStyle = '#F4FF09';
+        ctx.beginPath();
+        ctx.arc(695, 350, 36, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.fillStyle = '#006C0C';
+        ctx.beginPath();
+        ctx.arc(695, 350, 26, 0, 2 * Math.PI);
+        ctx.fill();
+
+
+
+        //Pasto
+        ctx.fillStyle = '#2FFB0C';
+        ctx.fillRect(0, 420, 900, 20);
+        ctx.fillStyle = '#2CD40F'
+        ctx.fillRect(0, 440, 900, 20);
+        ctx.fillStyle = '#19A500'
+        ctx.fillRect(0, 460, 900, 20);
+
+
+        // Función para dibujar un cuadrado
+        function dibujarCuadrado(x, y, lado, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, lado, lado);
+        }
+
+        // Tamaño y cantidad de cuadrados en cada capa
+        var cuadradoSize = 40;
+        var numCuadrados = canvas.width / cuadradoSize;
+
+        // Colores para cada capa
+        var coloresCapa1 = ["#5B3C06", "#D48B0B"];
+        var coloresCapa2 = ["#D48B0B", "#5B3C06"];
+        var coloresCapa3 = ["#5B3C06", "#D48B0B"];
+
+        // Dibuja las tres capas de cuadrados
+        for (var i = 0; i < numCuadrados; i++) {
+            var x = i * cuadradoSize;
+            var y1 = canvas.height - cuadradoSize;
+            var y2 = canvas.height - (2 * cuadradoSize);
+            var y3 = canvas.height - (3 * cuadradoSize);
+
+            var color1 = coloresCapa1[i % 2];
+            var color2 = coloresCapa2[i % 2];
+            var color3 = coloresCapa3[i % 2];
+
+            dibujarCuadrado(x, y1, cuadradoSize, color1);
+            dibujarCuadrado(x, y2, cuadradoSize, color2);
+            dibujarCuadrado(x, y3, cuadradoSize, color3);
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
